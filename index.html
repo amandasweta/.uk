@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Delius&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barrio&family=Bungee+Inline&family=Cinzel:wght@400..900&family=Delius&family=Gowun+Dodum&family=Graduate&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Limelight&family=Marcellus+SC&family=New+Tegomin&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Pompiere&family=Protest+Revolution&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+ 
   <title>Sound Design Portfolio</title>
   <style>
     /* Reset styles */
@@ -13,7 +17,10 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Overlock", sans-serif;
+     text-decoration: none;
+ font-family: "Marcellus SC", serif;
+  font-weight: 600;
+  position: relative;
     }
 
     /* Basic styles */
@@ -25,9 +32,11 @@
       color: #fff;
       padding: 20px;
       background-color:#fff;
+        height: 160px;
     }
     nav ul {
       list-style-type: none;
+       text-align-last: right;
     }
     nav ul li {
       display: inline;
@@ -35,12 +44,49 @@
     }
 
     nav ul li a {
-      color: #20B2AA;
-      text-decoration: none;
-      font-size: 20px;
-      font-family: "Zilla Slab", serif;
-      font-weight: 600;
-    }
+  color: #20B2AA;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s; /* Add transition for smooth color change */
+}
+
+nav ul li a::before,
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Initial width of the underline */
+  height: 2px;
+  background-color: transparent; /* Initial color */
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+nav ul li a::before {
+  transform-origin: left;
+}
+
+nav ul li a::after {
+  transform-origin: right;
+}
+
+nav ul li a:hover {
+  color: #B2394F; /* Red color on hover */
+}
+
+nav ul li a:hover::before {
+  width: 100%; /* Full width on hover */
+  background-color:#DE3163; /* Red color on hover */
+}
+
+nav ul li a:hover::after {
+  width: 100%; /* Full width on hover */
+  background-color: transparent; /* Transparent color on hover */
+}
+
 
     main {
       padding: 20px;
@@ -53,94 +99,116 @@
     h2 {
       margin-bottom: 60px;
       margin-top: 60px;
-      font-size 45px;
       text-align-last: center;
-      font-family: "Overlock", sans-serif;
+      font-family: "Bungee Inline", sans-serif;
+        font-weight: 400;
+       color: #B2394F;
     }
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
+      grid-template-columns: 1fr; /* Display videos in a single column */
+      gap: 40px;
+      text-align-last: center;
+}
+      .expertise{
+           border-bottom: 2px solid #DE3163;
+         padding-bottom: 150px;
+      }
     .portfolio-item {
-      border: 1px solid #800000;
       padding: 10px;
       background-color: #fff;
+      text-align-last: center;
     }
 
     .expertise {
-      margin-bottom: 20px;
-    }
+  margin-bottom: 20px;
+  text-align: center; /* Center align the expertise level section */
+}
 
-    .expertise-level {
-      margin-bottom: 10px;
-    }
+.expertise-level {
+  margin-bottom: 20px; /* Increase margin bottom for spacing */
+}
 
-    .progress-bar {
-      background-color: #ddd;
-      border-radius: 5px;
-      overflow: hidden;
-    }
-    .progress-bar-inner {
-      height: 20px;
-      background-color: #008080;
-      transition: width 0.3s ease-in-out;
-    }
+.progress-bar {
+  width: 35%; /* Set the width of the progress bar */
+  margin: 0 auto; /* Center align the progress bar */
+  background-color: #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 10px;
+  background-color: #008080;
+  transition: width 0.3s ease-in-out;
+}
+
     .progress-label {
       margin-top: 5px;
       font-size: 14px;
     }
     /* Homepage styles */
     .homepage {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      border-bottom: 4px solid #20B2AA;  
-        padding-bottom: 150px;
-    }
+         z-index: 1;
+        position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-bottom: 2px solid #008080;
+  padding-bottom: 150px;
+}
     .homepage h1 {
-      font-size: 34px;
-      margin-right: 20px;
-      font-family: "IBM Plex Mono", monospace;
-      color: #DC143C;
-    } 
-      a { 
-          text-decoration: none;
-          color:#8B0000;
-      }
-      nav ul li a {
-  color: #20B2AA; /* Default color */
-  text-decoration: none;
-  font-size: 20px;
-  font-family: "Zilla Slab", serif;
-  font-weight: 600;
-  position: relative;
-  transition: color 0.3s; /* Add transition for smooth color change */
+  font-size: 55px; /* Increased font size */
+  line-height: 1; /* Maintain normal line height */
+  margin-right: 20px;
+   font-family: "Bungee Inline", sans-serif;
+  color: #B2394F;
+   font-weight: 200;
+} 
+   .homepage span {
+  font-size: 17px;
+  margin-right: 20px;
+     font-family: "K2D", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: #000;
+        line-height: 0.2;
+}
+      ::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
 }
 
-nav ul li a:hover {
-  color: #DC143C; /* Red color */
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to left, #008080, #B2394F);
+  border-radius: 6px; /* Optional: Rounded corners for the scrollbar handle */
 }
 
-    .homepage h1 span{
-      font-size: 18px;
-      margin-right: 20px;
-      font-family: "Zilla Slab", serif;
-      color: #000;
-      font-weight: 500;
-    }
-    .homepage img {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-    }
-    .homepage img,
-    .homepage h1 {
-      width: 50%;
-      padding-bottom: 60px;
-    }
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+ background: linear-gradient(to right, #008080, #B2394F);
+}
+.homepage img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  padding-bottom: 0; /* Remove padding at the bottom */
+  margin-bottom: -10px; /* Adjust margin to remove white space */
+    transition: 1s;
+  border: 10px solid #fff; /* Use one of the colors from the site's palette */
+  border-radius: 20px; /* Optional: Add border radius for a rounded border */
+}
+
+.homepage img:hover {
+  transform: scale(1.05); /* Scale up slightly on hover for a zoom effect */
+}
+}
+.homepage img,
+.homepage h1 {
+  width: 50%;
+  padding-bottom: 60px;
+}
       
     footer {
       background-color: #fff;
@@ -215,7 +283,14 @@ nav ul li a:hover {
      #scrapbook {
   margin-top: 40px;
 }
-
+      .expertise-level2{
+          text-align-last: right;
+      }
+     .contact-item p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #B2394F;
+}
 .scrapbook-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -255,15 +330,15 @@ nav ul li a:hover {
   
   <main>
     <div class="homepage">
-      <h1>Amanda Sweta 
+      <h1>Amanda <br>Sweta 
       <br>
-      <span>Based in Birmingham, I'm an aspiring sound designer eager to contribute to audio projects. My capabilities include proficient sound editing, adept mixing of soundtracks, and a strong understanding of music composition, bolstered by my background as a musician. Let's connect and explore how I can bring value to your projects, regardless of location!</span></h1>
+      <span>Based in Birmingham, I'm an aspiring sound designer eager <br>to contribute to audio projects. My capabilities include proficient <br>sound design, adept mixing of soundtracks, and a strong understanding <br> of music composition, enhanced by my background as a musician.<br> Would love to assist on production processes and bring value to your projects!</span></h1>
       
       <img src="images/image2.jpg" alt="Your Picture">
     </div>
   
     <section id="portfolio">
-      <h2>Portfolio</h2>
+      <h2>Work</h2>
       <div class="portfolio-grid">
         <!-- Portfolio videos will be added here -->
         <div class="portfolio-item">
@@ -283,30 +358,30 @@ nav ul li a:hover {
       <div class="expertise-level">
         <h3>Ableton Live</h3>
         <div class="progress-bar">
-          <div class="progress-bar-inner" style="width: 95%;"></div>
+          <div class="progress-bar-inner" style="width: 90%;"></div>
         </div>
         <p class="progress-label">Expert</p>
       </div>
       <div class="expertise-level">
         <h3>Pro Tools</h3>
         <div class="progress-bar">
-          <div class="progress-bar-inner" style="width: 90%;"></div>
+          <div class="progress-bar-inner" style="width: 85%;"></div>
         </div>
         <p class="progress-label">Expert</p>
       </div>
       <div class="expertise-level">
         <h3>Logic Pro</h3>
         <div class="progress-bar">
-          <div class="progress-bar-inner" style="width: 50%;"></div>
+          <div class="progress-bar-inner" style="width: 55%;"></div>
         </div>
         <p class="progress-label">Proficient</p>
       </div>
        <div class="expertise-level">
         <h3>Visual Music Composition</h3>
         <div class="progress-bar">
-          <div class="progress-bar-inner" style="width: 85%;"></div>
+          <div class="progress-bar-inner" style="width: 55%;"></div>
         </div>
-        <p class="progress-label">Advanced</p>
+        <p class="progress-label">Proficient</p>
       </div>
       <div class="expertise-level">
         <h3>Sound Effects and Ambience</h3>
@@ -316,16 +391,21 @@ nav ul li a:hover {
         <p class="progress-label">Advanced</p>
       </div>
       <!-- Add more expertise levels as needed -->
+      <br><br><br>
+       <div class="expertise-level2">
+    <img src="images/Screenshot.jpg" alt="Pro Tools Certified" width="260px">
+  </div>
     </div>
+
     
      <br><br><br><br>
     <section id="scrapbook">
   <div class="scrapbook-grid">
     <div class="scrapbook-item">
-      <img src="images/image1.jpg" alt="Image 1">
+      <img src="images/image4.jpg" alt="Image 2">
     </div>
     <div class="scrapbook-item">
-      <img src="images/image4.jpg" alt="Image 2">
+      <img src="images/image1.jpg" alt="Image 1">
     </div>
     <div class="scrapbook-item">
       <img src="images/image3.jpg" alt="Image 3">
@@ -333,7 +413,7 @@ nav ul li a:hover {
   </div>
 </section>
 
-<br><br><br><br><br>
+<br><br><br>
     
     
    <footer>
