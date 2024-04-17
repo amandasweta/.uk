@@ -160,6 +160,9 @@ nav ul li a:hover::after {
   border-bottom: 2px solid #64B5F6;
   padding-bottom: 150px;
 }
+      .homepage2{
+          display: none;
+      }
     .homepage h1 {
   font-size: 55px; /* Increased font size */
   line-height: 1; /* Maintain normal line height */
@@ -355,25 +358,49 @@ nav ul li a:hover::after {
 }
 
       /* Adjust homepage styles */
-      .homepage {
+        .homepage{
+            display: none;
+        }
+        .homepage2 {
+         z-index: 1;
+        position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-bottom: 2px solid #64B5F6;
+  padding-bottom: 120px;
+}
+      .homepage2 {
         flex-direction: column;
         text-align: center;
-      }
+        }
 
-      .homepage h1 {
-        font-size: 20px;
+      .homepage2 h1 {
+        font-size: 22px;
         margin-bottom: 30px;
+        font-family: "Bungee Inline", sans-serif;
+        color: #880E4F;
+        font-weight: 200;
+    
       }
 
-      .homepage span {
+      .homepage2 span {
         font-size: 10px;
         line-height: 1.5;
+        font-family: "K2D", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        color: #000;
+        line-height: 0.2;
       }
 
-      .homepage img {
+      .homepage2 img {
         width: 200px;
         margin-bottom: 20px;
-          margin-top: 60px;
+        margin-top: 30px;
+        border-radius: 15px; /* Optional: Add border radius for a rounded border */
+
       }
 
       /* Adjust portfolio grid */
@@ -382,13 +409,13 @@ nav ul li a:hover::after {
         margin-bottom: 20px;
       }
         .portfolio-grid{
-            display:none;
+         display:none;
         }
         .portfolio-grid2 {
-      display: grid;
-      grid-template-columns: 1fr; /* Display videos in a single column */
-      gap: 20px;
-      text-align-last: center;
+         display: grid;
+         grid-template-columns: 1fr; /* Display videos in a single column */
+         gap: 20px;
+         text-align-last: center;
 }
 
         h3{
@@ -413,7 +440,7 @@ nav ul li a:hover::after {
 
     .progress-label {
       margin-top: 0px;
-      font-size: 10px;
+      font-size: 8px;
     }
         .expertise-level2 img{
             width: 100px;
@@ -485,6 +512,14 @@ nav ul li a:hover::after {
       <h1>Amanda <br>Sweta 
       <br>
       <span>Based in Birmingham, I'm an aspiring sound designer eager <br>to contribute to audio projects. My capabilities include proficient <br>sound design, adept mixing of soundtracks, and a strong understanding <br> of music composition, enhanced by my background as a musician.<br> Would love to assist on production processes and bring value to your projects!</span></h1>
+      
+      <img src="images/image2.jpg" alt="Your Picture">
+    </div>
+    
+    <div class="homepage2">
+      <h1>Amanda <br>Sweta 
+      <br>
+      <span>Based in Birmingham, I'm an aspiring sound designer eager to contribute to audio projects. My capabilities include proficient sound design, adept mixing of soundtracks, and a strong understanding of music composition, enhanced by my background as a musician. Would love to assist on production processes and bring value to your projects!</span></h1>
       
       <img src="images/image2.jpg" alt="Your Picture">
     </div>
