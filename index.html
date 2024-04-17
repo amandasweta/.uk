@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barrio&family=Bungee+Inline&family=Cinzel:wght@400..900&family=Delius&family=Gowun+Dodum&family=Graduate&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Limelight&family=Marcellus+SC&family=New+Tegomin&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Pompiere&family=Protest+Revolution&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
  
   <title>Sound Design Portfolio</title>
@@ -318,6 +316,156 @@ nav ul li a:hover::after {
   max-width: 100%;
   max-height: 100%;
 }
+      
+      .portfolio-grid2{
+          display: none;
+      }   
+      
+      
+      
+      
+       /* Mobile responsive styles here */
+      
+    @media only screen and (max-width: 600px) {
+      /* Adjust header styles */
+      header {
+        height: auto;
+        padding: 10px;
+      }
+
+      header h1 {
+        font-size: 24px;
+      }
+        header{
+            height: 120px;
+        }
+
+      nav ul li {
+        display: block;
+        margin: 5px 0;
+      }
+  nav ul li a {
+  color: #64B5F6;
+  text-decoration: none;
+  font-size: 10px;
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s; /* Add transition for smooth color change */
+}
+
+      /* Adjust homepage styles */
+      .homepage {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .homepage h1 {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      .homepage span {
+        font-size: 10px;
+        line-height: 1.5;
+      }
+
+      .homepage img {
+        width: 200px;
+        margin-bottom: 20px;
+          margin-top: 60px;
+      }
+
+      /* Adjust portfolio grid */
+      .portfolio-item {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+        .portfolio-grid{
+            display:none;
+        }
+        .portfolio-grid2 {
+      display: grid;
+      grid-template-columns: 1fr; /* Display videos in a single column */
+      gap: 20px;
+      text-align-last: center;
+}
+
+        h3{
+            font-size: 10px;
+        }
+        h2{
+            font-size: 15px;
+        }
+        progress-bar {
+  width: 35%; /* Set the width of the progress bar */
+  margin: 0 auto; /* Center align the progress bar */
+  background-color: #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 5px;
+  background-color:#64B5F6;
+  transition: width 0.3s ease-in-out;
+}
+
+    .progress-label {
+      margin-top: 0px;
+      font-size: 10px;
+    }
+        .expertise-level2 img{
+            width: 100px;
+        }
+         .contact-item h3 {
+      font-size: 10px;
+      margin-bottom: 5px;
+    }
+
+    .contact-item p {
+      font-size: 10px;
+      margin-bottom: 10px;
+    }
+
+    .contact-item img{
+      width: 20px;
+      text-decoration: none;
+    }
+        .scrapbook-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.scrapbook-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  /* Set a fixed width and height for the images */
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  /* Center the image within the container */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrapbook-item img {
+  max-width: 100%;
+  max-height: 100%;
+}
+      /* Add more adjustments as needed for other sections */
+    }   
+      
+      
+      
+      
+      
+      
+      
+      
+      
   </style>
 </head>
 <body>
@@ -355,6 +503,20 @@ nav ul li a:hover::after {
         </div>
         <!-- Add more portfolio items as needed -->
       </div>
+      
+      <div class="portfolio-grid2">
+        <!-- Portfolio videos will be added here -->
+        <div class="portfolio-item">
+          <h3>Ring Movie Clip Sound Re-design</h3>
+          <iframe width="260" height="165" src="https://www.youtube.com/embed/toi2NphfOuc" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="portfolio-item">
+          <h3>Gothic Ambience</h3>
+          <iframe width="260" height="165" src="https://www.youtube.com/embed/eYRMYRoOTto" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <!-- Add more portfolio items as needed -->
+      </div>
+      
     </section>
 
     <div class="expertise">
