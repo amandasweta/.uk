@@ -121,6 +121,42 @@ nav ul li a:hover::after {
       text-align-last: center;
         
     }
+     .portfolio-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-items {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  width: 100%; /* Ensure each video takes up the full width */
+}
+
+  button.prev,
+  button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+  }
+  button.prev {
+    left: 0;
+  }
+
+  button.next {
+    right: 0;
+  }
 
     .expertise {
   margin-bottom: 20px;
@@ -322,7 +358,14 @@ nav ul li a:hover::after {
       
       .portfolio-grid2{
           display: none;
+  
       }   
+
+      .portfolio-item iframe {
+    width: 760px;
+    height: 415px;
+          
+}
       
       
       
@@ -331,6 +374,31 @@ nav ul li a:hover::after {
       
     @media only screen and (max-width: 600px) {
       /* Adjust header styles */
+        
+   .portfolio-items {
+    display: flex;
+    transition: transform 0.5s ease;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    scroll-snap-type: x mandatory; /* Snap to each item */
+    padding-bottom: 20px; /* Add some space at the bottom for scrollbar */
+       scrollbar-width: thin; /* Set the width of the scrollbar to thin */
+  }
+
+  .portfolio-item {
+    flex: 0 0 auto;
+    margin-right: 20px; /* Add some space between items */
+    width: 250px; /* Set the width of each item */
+  }
+
+  button.prev,
+  button.next {
+    display: none; /* Hide the buttons on mobile */
+  }
+    .portfolio-item iframe {
+    width: 250px;
+    height: 150px;
+}
       header {
         height: auto;
         padding: 10px;
@@ -403,21 +471,6 @@ nav ul li a:hover::after {
 
       }
 
-      /* Adjust portfolio grid */
-      .portfolio-item {
-        width: 100%;
-        margin-bottom: 20px;
-      }
-        .portfolio-grid{
-         display:none;
-        }
-        .portfolio-grid2 {
-         display: grid;
-         grid-template-columns: 1fr; /* Display videos in a single column */
-         gap: 20px;
-         text-align-last: center;
-}
-
         h3{
             font-size: 10px;
         }
@@ -482,17 +535,13 @@ nav ul li a:hover::after {
   max-width: 100%;
   max-height: 100%;
 }
-      /* Add more adjustments as needed for other sections */
-    }   
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      }
+
+        
+        
+        
+        
+        
   </style>
 </head>
 <body>
@@ -525,35 +574,47 @@ nav ul li a:hover::after {
     </div>
   
     <section id="portfolio">
-      <h2>Work</h2>
-      <div class="portfolio-grid">
-        <!-- Portfolio videos will be added here -->
-        <div class="portfolio-item">
-          <h3>Ring Movie Clip Sound Re-design</h3>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/toi2NphfOuc" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="portfolio-item">
-          <h3>Gothic Ambience</h3>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/eYRMYRoOTto" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <!-- Add more portfolio items as needed -->
+  <h2>Portfolio</h2>
+  
+  
+  
+  <div class="portfolio-carousel">
+    <div class="portfolio-items">
+      <div class="portfolio-item">
+    <h3>Thief Animated video Sound Re-design</h3>
+    <iframe src="https://www.youtube.com/embed/IQndMouZe5U" frameborder="0" allowfullscreen></iframe>
+      </div>
+       <div class="portfolio-item">
+        <h3>Ring Movie Clip Sound Re-design</h3>
+        <iframe src="https://www.youtube.com/embed/toi2NphfOuc" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="portfolio-item">
+    <h3>Sound Design 1</h3>
+    <iframe src="https://www.youtube.com/embed/jAtEG9Br70o" frameborder="0" allowfullscreen></iframe>
+     </div>
+      <div class="portfolio-item">
+        <h3>Gothic Ambience</h3>
+        <iframe src="https://www.youtube.com/embed/eYRMYRoOTto" frameborder="0" allowfullscreen></iframe>
       </div>
       
-      <div class="portfolio-grid2">
-        <!-- Portfolio videos will be added here -->
-        <div class="portfolio-item">
-          <h3>Ring Movie Clip Sound Re-design</h3>
-          <iframe width="260" height="165" src="https://www.youtube.com/embed/toi2NphfOuc" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="portfolio-item">
-          <h3>Gothic Ambience</h3>
-          <iframe width="260" height="165" src="https://www.youtube.com/embed/eYRMYRoOTto" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <!-- Add more portfolio items as needed -->
-      </div>
-      
-    </section>
 
+      <!-- Add more portfolio items as needed -->
+    </div>
+    <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+    <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+  </div>
+  
+
+
+
+</section>
+  
+  
+
+   
+   
+   
+ 
     <div class="expertise">
       <h2>Skills</h2>
       <div class="expertise-level">
@@ -561,14 +622,14 @@ nav ul li a:hover::after {
         <div class="progress-bar">
           <div class="progress-bar-inner" style="width: 90%;"></div>
         </div>
-        <p class="progress-label">Expert</p>
+        <p class="progress-label">Advanced</p>
       </div>
       <div class="expertise-level">
         <h3>Pro Tools</h3>
         <div class="progress-bar">
           <div class="progress-bar-inner" style="width: 85%;"></div>
         </div>
-        <p class="progress-label">Expert</p>
+        <p class="progress-label">Advanced</p>
       </div>
       <div class="expertise-level">
         <h3>Logic Pro</h3>
@@ -587,9 +648,16 @@ nav ul li a:hover::after {
       <div class="expertise-level">
         <h3>Sound Effects and Ambience</h3>
         <div class="progress-bar">
-          <div class="progress-bar-inner" style="width: 70%;"></div>
+          <div class="progress-bar-inner" style="width: 75%;"></div>
         </div>
         <p class="progress-label">Advanced</p>
+      </div>
+      <div class="expertise-level">
+        <h3>Podcast Editing</h3>
+        <div class="progress-bar">
+          <div class="progress-bar-inner" style="width: 60%;"></div>
+        </div>
+        <p class="progress-label">Proficient</p>
       </div>
       <!-- Add more expertise levels as needed -->
       <br><br><br>
@@ -597,7 +665,8 @@ nav ul li a:hover::after {
     <img src="images/Screenshot.jpg" alt="Pro Tools Certified" width="260px">
   </div>
     </div>
-
+    
+     
     
      <br><br><br><br>
     <section id="scrapbook">
@@ -649,7 +718,21 @@ nav ul li a:hover::after {
         var popup = document.getElementById("myPopup");
         popup.classList.toggle("show");
       }
-    </script>  
+    </script>
+
+  
+  <script>
+  let currentIndex = 0;
+  const items = document.querySelector('.portfolio-items');
+  const totalItems = items.querySelectorAll('.portfolio-item').length;
+
+  function moveCarousel(direction) {
+    currentIndex = (currentIndex + direction + totalItems) % totalItems;
+    const itemWidth = items.querySelector('.portfolio-item').clientWidth;
+    items.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
+  }
+</script>
+
 
   </main>
 </body>
